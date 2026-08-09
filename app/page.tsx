@@ -145,7 +145,7 @@ export default function Home() {
         <h2>Tools I use to <span>build & operate.</span></h2>
         <div className="skills-grid">
           {skills.map(([title, items]) => (
-            <div className="skill-card" key={title}>
+            <div key={Array.isArray(title) ? title.join("-") : title}>
               <h3>{title}</h3>
               <div className="chips">{(items as string[]).map((item) => <span key={item}>{item}</span>)}</div>
             </div>
